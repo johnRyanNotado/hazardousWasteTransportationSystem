@@ -1,0 +1,82 @@
+.login_box {
+  display:inline-block;
+  align-items: center;
+  text-align: center;
+  margin-top: 170px;
+  height: 393px;
+  width: 396px;
+  border: none;
+  border-width: 1px;
+  border-color: gray;
+  border-radius:  8px;
+  box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.15);
+}
+
+.log_in_grid {
+  margin-top:20px;
+  display: grid;
+  grid-template-columns: 364px;
+  justify-content: center;
+  row-gap: 20px;
+}
+
+.title_box {
+  padding-top: 14px;
+  padding-bottom: 14px;
+  font-size: 26px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 500;
+  color: rgb(0, 19, 83);
+}
+
+.input_box_ID,
+.input_box_password{
+  font-size: 17px;
+  font-family: Roboto;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  padding-right: 15px;
+  padding-left: 15px;
+  border-width: 1px;
+  border-radius: 8px;
+  border-color: rgb(221, 223, 226);
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.input_box_password{
+  input-security: password;
+}
+
+.input_box_ID:active,
+.input_box_password:active {
+  border-color:  rgb(0, 19, 83);
+}
+
+.log_in_button {
+  font-family: Roboto;
+  font-size: 19px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  background-color: rgb(0, 19, 83);
+  color: white;
+  cursor: pointer;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  padding-right: 15px;
+  padding-left: 15px;
+  transition: opacity 0.15s;
+}
+
+.log_in_button:hover {
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+.log_in_button:active {
+  opacity: 1;
+}
+
+.error{
+  margin-top:20px;
+}

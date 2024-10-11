@@ -1,0 +1,16 @@
+create table client (
+	  client_id VARCHAR(13) PRIMARY KEY,
+    client_lastName VARCHAR(15) not null,
+    client_firstName VARCHAR(15) not null,
+    client_denrID VARCHAR(20) not null,
+    client_companyName VARCHAR(40) not null unique,
+    client_emailAddress VARCHAR(30) not null unique,
+    client_contactNum VARCHAR(30) not null unique,
+    client_region VARCHAR (20) not null,
+    client_city VARCHAR(20) not null,
+    client_barangay VARCHAR(20) not null,
+    client_street VARCHAR(25) not null,
+    client_houseNum VARCHAR(5) not null,
+    client_password VARCHAR(20) not null,
+    client_verificationStatus VARCHAR(1)
+);

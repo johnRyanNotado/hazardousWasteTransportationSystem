@@ -1,0 +1,83 @@
+main {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+body {
+  margin-top: 46px;
+  margin-bottom: 50px;
+}
+
+.error,
+.success {
+  margin-top: 20px;
+}
+.employeeRegisterForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.employeeRegisterBox,
+.innerFormDriverBox {
+  align-items: center;
+  text-align: center;
+  border: none;
+  width: 1000px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 30px;
+  border-width: 1px;
+  border-color: gray;
+  border-radius:  8px;
+  box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.15);
+}
+
+.innerFormDriverBox {
+  display: flex;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  justify-content: center;
+  column-gap: 20px;
+  width: 1000px;
+}
+
+.employeeRegisterBox p,
+.innerFormDriverBox p {
+  text-align: right;
+  padding-right: 20px
+}
+
+.inputTitle,
+.innerFormDriverBox p {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  font-size: 20px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 500;
+  color: rgb(0, 19, 83);
+}
+
+.employeeDataForm {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 16px;
+  column-gap: 10px;
+  row-gap: 10px;
+}
+
+.radioButtonsContainer {
+    column-gap: 40px;
+}
+
+.employeeRegisterFormLeftPart,
+.employeeRegisterFormRightPart {
+  display: grid;
+  grid-template-columns: 38% 1fr;
+  padding: 16px;
+  column-gap: 10px;
+  row-gap: 10px;
+  align-items: center;
+}

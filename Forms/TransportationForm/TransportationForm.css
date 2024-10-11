@@ -1,0 +1,216 @@
+body {
+  justify-content: center;
+}
+
+
+.error,
+.success {
+  padding:  0;
+  text-align: center;
+}
+
+.requestFormBox,
+.requestFormDateBox,
+.addressPartBox,
+.wasteEditBox {
+  display:block;
+  align-items: center;
+  border: none;
+  border-width: 1px;
+  border-color: gray;
+  border-radius:  8px;
+  box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.15);
+}
+
+.requestFormBox {
+  WIDTH: 93%;
+}
+
+.addressPartBox {
+  margin-left: 10px;
+  margin-right: 20px;
+}
+
+.wasteEditBox,
+.wasteDataContent {
+   width: 240px;
+   height: 310px;
+}
+
+.requestFormDateBox {
+  width: 100%;
+}
+
+.wasteEditBox {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 16px;
+}
+
+.rowGrid {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.wasteEditBox input{
+  width: 120px;
+}
+
+.confirmationContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position:relative;
+  row-gap: 6px;
+}
+
+.wasteEditBox button{
+  width: 100px;
+}
+
+.wasteEditBox p{
+  text-align: center;
+}
+
+.requestForm{
+  width: 1800px;
+  margin-top: 0px;
+  display: grid;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  column-gap: 0px;
+}
+
+.requestForm p {
+  text-align: right;
+  padding-right: 10px;
+}
+
+.requestForm button {
+  width: 100px;
+  margin-top: 20px;
+}
+
+.inputTitle {
+  padding-top: 14px;
+  padding-bottom: 14px;
+  font-size: 20px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 500;
+  color: rgb(0, 19, 83);
+}
+
+.identificationFlex{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 10px;
+  WIDTH: 100%;
+}
+
+.requestDataContainer {
+  display:flex;
+  flex-direction: column;
+  margin-top: 304px;
+  align-items: center;
+  width: 100%:
+}
+
+.requestDataContainer button {
+  margin-left: 0px;
+}
+
+
+.identificationPart,
+.addressPart {
+  display: grid;
+  grid-template-columns: 28% 1fr;
+  padding-right: 20px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  column-gap: 10px;
+  row-gap: 10px;
+  align-items: center;
+}
+
+.datePart{
+  display: grid;
+  grid-template-columns: 25% 1fr;
+  padding-right: 20px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  column-gap: 5px;
+  row-gap: 5px;
+  align-items: center;
+}
+
+.identificationFormContainer {
+  display: flex;
+  width: 1200px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  row-gap: 20px;
+}
+
+
+.wasteDataContent,
+.wasteDataHeader {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 30px;
+  width: 100%;
+  font-size: 20px;
+  border-style: solid;
+  border-color: white;
+  border-width: 1px;
+  border-radius:  8px;
+}
+.wasteIDHeader,
+.wasteAmountHeader {
+  background-color:	rgb(173,216,230);
+  border: none;
+  border-color: gray;
+  border-radius:  8px;
+  box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.15);
+}
+.displayContainer {
+  display: grid;
+  grid-template-columns: 25% 1fr;
+  column-gap: 20px;
+  align-items: flex-start;
+  justify-content:center;
+  margin-left: 40px;
+}
+
+.wasteAssignmentContainer {
+  row-gap: 20px;
+  height: 100px;
+  width: : 100px;
+  display: flex;
+  margin-top:154px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+
+
+.wasteAssignment button {
+  margin:0;
+}
+
+.wasteDataBox {
+  width: 300px;
+  height: 324px;
+  align-items: center;
+  text-align: center;
+  border: none;
+  border-color: gray;
+  border-radius:  8px;
+  box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.15);
+}

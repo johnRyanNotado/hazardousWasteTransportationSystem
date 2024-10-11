@@ -1,0 +1,63 @@
+.biggestContainer {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+}
+
+.clientInfoBox,
+.clientStatementOfAccountBox,
+.clientListOfBillBox,
+.clientListOfPaymentBox {
+  border: none;
+  border-width: 1px;
+  border-color: gray;
+  border-radius:  8px;
+  box-shadow: 1px 1px 7px 2px rgba(0, 0, 0, 0.15);
+  width: 1000px;
+}
+
+.boxHeader {
+  background-color: lightblue;
+  text-align: center;
+  font-weight: bold;
+  height: 30px;
+  padding-top: 6px;
+  font-size: 18px;
+  font-family: Times;
+  color:  rgb(0, 19, 83);
+}
+
+.boxBody {
+  display: grid;
+  grid-template-columns:36% 1fr;
+}
+
+.boxBodyBill {
+  display: grid;
+  grid-template-columns:1fr 1fr 1fr 1fr 1fr;
+}
+.boxBodyPayment {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.boxBody p,
+.boxBodyBill p,
+.boxBodyPayment p{
+  height: 30px;
+  padding-top: 6px;
+  font-size: 18px;
+  font-family: Times;
+  color:  rgb(0, 19, 83);
+}
+
+.boxBody p {
+  text-align: left;
+  padding-left: 10px;
+}
+
+.boxBodyBill p,
+.boxBodyPayment p{
+  text-align: center;
+}

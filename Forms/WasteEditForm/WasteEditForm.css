@@ -1,0 +1,104 @@
+
+
+.wasteEditBox,
+.wasteDataBox {
+  display:inline-block;
+  align-items: center;
+  text-align: center;
+  border: none;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-width: 1px;
+  border-color: gray;
+  border-radius:  8px;
+  box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.15);
+}
+
+.wasteEditBox {
+  height: 410px;
+  width: 396px;
+  margin-bottom: 20px;
+}
+
+.wasteDataBox {
+  height: 580px;
+  width: 600px;
+}
+
+.wasteEditForm {
+  margin-top:10px;
+  display: grid;
+  grid-template-columns: 364px;
+  justify-content: center;
+  align-items: middle;
+  row-gap: 6px;
+}
+
+.inputTitle {
+  padding-top: 14px;
+  padding-bottom: 14px;
+  font-size: 26px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 500;
+  color: rgb(0, 19, 83);
+}
+
+a {
+  margin-top: 6px
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  padding-top: 100px;
+}
+
+.radioButtonsContainer {
+    column-gap: 40px;
+}
+
+.titleContainer {
+    width: 396px;
+}
+
+.wasteEditContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: top;
+}
+
+.wasteDataHeader {
+  display: grid;
+  grid-template-columns: 30% 1fr;
+  height:50px;
+  width: 100%;
+  margin-bottom: 28px;
+}
+
+.wasteDataContent{
+  display: grid;
+  grid-template-columns: 30% 1fr;
+  height: 40px;
+  width: 100%;
+  text-align: center;
+  row-gap: 20px;
+}
+
+.wasteIDHeader,
+.wasteNameHeader{
+  font-size: 20px;
+  padding: 20px;
+  border-style: solid;
+  border-color: white;
+  border-width: 1px;
+  border-radius:  8px;
+}
+
+.wasteIDHeader {
+  background-color:	rgb(173,216,230);
+}
+
+.wasteNameHeader {
+  background-color: rgb(135,206,235);
+}

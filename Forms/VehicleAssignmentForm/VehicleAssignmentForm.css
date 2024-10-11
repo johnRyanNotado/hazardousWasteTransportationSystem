@@ -1,0 +1,30 @@
+.vehicleDataContent,
+.vehicleDataHeader {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  height: 30px;
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+  border-style: solid;
+  border-color: white;
+  border-width: 1px;
+  border-radius:  8px;
+}
+
+
+.vehicleDataBox {
+   width: 700px;
+   height: 250px;
+   border: none;
+   border-width: 1px;
+   border-color: gray;
+   border-radius:  8px;
+   padding-bottom: 16px;
+   row-gap: 5px;
+   box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.15);
+}
+
+.wasteAssignmentContainer {
+  flex-direction: row;
+}

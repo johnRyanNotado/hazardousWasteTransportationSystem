@@ -1,0 +1,140 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  height: 800px;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.titleRow {
+  margin-top: 46px;
+  font-weight: bold;
+  font-size: 45px;
+  color: rgb(0, 19, 83);
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0;
+}
+
+.inputRow{
+  font-family: Helvetica, Arial;
+  padding: 24px;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px;
+  height: 450px;
+  width: 1000px;
+  border: none;
+  border-width: 1px;
+  border-color: gray;
+  border-radius:  8px;
+  box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.15);
+}
+
+
+.registerForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.upperRegistration,
+.lowerRegistration {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 16px;
+  row-gap: 10px;
+  height: 70%;
+  width: 100%;
+}
+
+.upperRight,
+.upperLeft,
+.addressRegistration,
+.passwordRegistration {
+  display: grid;
+  grid-template-columns: 34% 1fr;
+  align-items: center;
+  row-gap: 14px;
+  font-weight: bold;
+  text-align: right;
+}
+
+.passwordRegistration {
+  height: 50%;
+  margin-top: 4px;
+}
+
+p {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: right;
+  padding-right: 50px;
+  font-family: Roboto, Arial;
+  margin: 0;
+  color: rgb(0, 19, 83);
+}
+
+.upperRight,
+.passwordRegistration {
+  padding-right: 30px;
+}
+
+.addressRegistration {
+  margin-top: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.addressRow {
+  display: block;
+  width: 100%;
+  align-items: center;
+  row-gap: 10px;
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 34% 1fr;
+  justify-content: center;
+  position: relative;
+}
+
+
+.addressTitle {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: left;
+  margin-left: 300px;
+  margin-top: 20px;
+  text-decoration: underline;
+}
+
+.lowerRegistration {
+  position: relative;
+}
+
+.registerConfirmation {
+  position: absolute;
+  right: 150px;
+  bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.registerButton {
+  padding-left: 50px;
+  padding-right: 50px;
+  margin-bottom: 10px;
+}
+
+.error,
+.success{
+  font-size: 16px;
+  z-index: 1;
+  position:absolute;
+  padding-right: 0px;
+  top: 90px;
+  white-space: nowrap;
+}

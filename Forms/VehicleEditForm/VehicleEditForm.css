@@ -1,0 +1,147 @@
+.vehicleDataBox,
+.vehicleEditBox,
+.vehicleFindBox {
+  display: inline-block;
+  align-items: center;
+  text-align: center;
+  border: none;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-width: 1px;
+  border-color: gray;
+  border-radius:  8px;
+  box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.15);
+}
+
+.vehicleEditBox,
+.vehicleFindBox {
+  width: 410px;
+  margin-bottom: 20px;
+  padding-left: 14px;
+  padding-right: 28px;
+  padding-bottom: 30px;
+  text-align: right;
+}
+
+.vehicleEditBox {
+    height: 390px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+}
+
+
+.vehicleDataBox {
+  height: 610px;
+  width: 762px;
+  margin-top: 62px;
+}
+
+
+.vehicleEditForm,
+.vehicleFindBox {
+  padding-top:20px;
+  padding-bottom: 20px;
+  display: grid;
+  grid-template-columns: 40% 1fr;
+  justify-content: center;
+  align-items: middle;
+  row-gap: 10px;
+  column-gap: 20px;
+}
+
+
+.inputTitle {
+  padding-top: 14px;
+  padding-bottom: 14px;
+  font-size: 20px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 500;
+  color: rgb(0, 19, 83);
+}
+
+a {
+  margin-top: 6px
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  padding-top: 74px;
+}
+
+.radioButtonsContainer {
+    column-gap: 40px;
+}
+
+.radioButtonsContainerStat,
+.radioButtonsContainerType {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 16px;
+}
+
+
+.titleContainer {
+    width: 396px;
+}
+
+.vehicleDataBox {
+  overflow-y: scroll;
+}
+
+.vehicleEditBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.wasteEditContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: top;
+}
+
+.vehicleDataHeader,
+.vehicleDataContent {
+  display: grid;
+  grid-template-columns: 180px 140px 140px 140px 140px;
+  height: 50px;
+  width: 100%;
+  margin-bottom: 28px;
+}
+
+.vehicleDataContent {
+  margin-top: 30px;
+  row-gap: 16px;
+}
+
+.vehicleDataHeader div {
+  background-color: lightblue;
+  font-size: 18px;
+  padding: 20px;
+  border-style: solid;
+  border-color: white;
+  border-width: 1px;
+  border-radius:  8px;
+}
+
+.wasteIDHeader {
+  background-color:	rgb(173,216,230);
+}
+
+.wasteNameHeader {
+  background-color: rgb(135,206,235);
+}
+
+.submitButtonContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.submitButtonContainer button {
+  width: 130px;
+}

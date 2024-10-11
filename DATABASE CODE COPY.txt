@@ -1,0 +1,234 @@
+# This is the source code for the creation of every table included in the system.
+
+# The admin table contains the data needed for verification when granting of access to the system. This is not included in the EERD.
+create table admin (
+     adminID INT(3) PRIMARY KEY AUTO_INCREMENT,
+     adminFirstName VARCHAR (15),
+     adminLastName VARCHAR (15),
+     adminPassword VARCHAR (15),
+     adminUserName VARCHAR (15)
+);
+
+create table client (
+     clientID VARCHAR(18) PRIMARY KEY,
+     denrGenID VARCHAR(20) UNIQUE not null,
+     clientCompanyName VARCHAR(40) not null,
+     clientRegion VARCHAR(8) not null,
+     clientEmailAddress VARCHAR(30) UNIQUE not null,
+     clientContactNum VARCHAR(11) UNIQUE not null,
+     clientCity VARCHAR(30) not null,
+     clientBarangay VARCHAR(30) not null,
+     clientStreetName VARCHAR(30) not null,
+     clientHouseNum VARCHAR(5) not null
+);
+
+create table waste (
+     wasteID VARCHAR(4) PRIMARY KEY,
+     wasteName VARCHAR(30)
+);
+
+create table tsd (
+     tsdID VARCHAR(18) PRIMARY KEY,
+     tsdName VARCHAR(40) not null,
+     tsdDenrID VARCHAR(20) not null,
+     tsdRegion VARCHAR(30) not null,
+     tsdCity VARCHAR(30) not null,
+     tsdBarangay VARCHAR(30) not null,
+     tsdStreetName VARCHAR(30) not null,
+     tsdHouseNum VARCHAR(30) not null
+);
+
+create table account (
+     accountNum VARCHAR(10) PRIMARY KEY,
+     accountStatus VARCHAR(1) not null DEFAULT 'O',
+     clientID VARCHAR(18) not null,
+     FOREIGN KEY (clientID) REFERENCES client(clientID)
+);
+
+create table contract (
+     contractID VARCHAR(18) not null,
+     startDate DATE not null,
+     endDate DATE not null,
+     numOfRequest INT(2) not null,
+     preTerminationFee FLOAT(7,2) not null,
+     contractStatus VARCHAR(1) not null DEFAULT 'P',
+     contractDescription VARCHAR(1000) not null,
+     clientID VARCHAR(18) not null,
+     PRIMARY KEY(contractID),
+     FOREIGN KEY (clientID) REFERENCES client(clientID)
+);
+
+create table terminatedContract (
+     tContractID VARCHAR(18) not null,
+     terminationDate DATE,
+     PRIMARY KEY (tContractID),
+     FOREIGN KEY (tContractID) REFERENCES contract(contractID)
+);
+
+create table request (
+     requestID VARCHAR(18) not null,
+     denrRefCode VARCHAR(20),
+     specDateOfPickUp DATE not null,
+     dateNAGen DATE,
+     dateIssuanceAckLet DATE,
+     clientID VARCHAR(18) not null,
+     contractID VARCHAR(18),
+     requestStatus VARCHAR(1) not null DEFAULT 'U',
+     tsdID VARCHAR(18) not null,
+     PRIMARY KEY (requestID),
+     FOREIGN KEY (tsdID) REFERENCES tsd(tsdID),
+     FOREIGN KEY (contractID) REFERENCES contract(contractID),
+     FOREIGN KEY (clientID) REFERENCES client(clientID)
+);
+
+create table unchange (
+uRequestID VARCHAR(18) not null,
+PRIMARY KEY (uRequestID),
+FOREIGN KEY (uRequestID) REFERENCES request(requestID)
+);
+
+# subtype for request
+create table requestCancelled (
+	  cRequestID VARCHAR(18) not null,
+    cancelDate DATE not null,
+    cancelReason VARCHAR(75),
+    PRIMARY KEY (cRequestID),
+    FOREIGN KEY (cRequestID) REFERENCES request(requestID)
+);
+
+create table transportation (
+    transportationID VARCHAR(18) not null,
+    dateOfActualPickUp DATE not null,
+    transportationStatus VARCHAR(1) not null DEFAULT "P",
+    uRequestID VARCHAR(18) not null,
+    PRIMARY KEY (transportationID),
+    FOREIGN KEY (uRequestID) REFERENCES unchange(uRequestID)
+);
+
+create table bill (
+     referenceNum VARCHAR(18) not null,
+     deliveryFee FLOAT(7, 2) not null DEFAULT 0,
+     penaltyFee FLOAT(7, 2) not null DEFAULT 0,
+     requestID VARCHAR(18),
+     tContractID VARCHAR(18),
+     accountNum VARCHAR(10) not null,
+     PRIMARY KEY (referenceNum),
+     FOREIGN KEY (tContractID) REFERENCES terminatedContract(tContractID),
+     FOREIGN KEY (requestID) REFERENCES REQUEST(requestID),
+     FOREIGN KEY (accountNum) REFERENCES account(accountNum)
+);
+
+create table payment (
+     paymentID VARCHAR(18) not null,
+     amountPaid FLOAT(8,2) not null,
+     dateOfPayment DATE not null,
+     clientID VARCHAR(18) not null,
+     accountNum VARCHAR(10) not null,
+     PRIMARY KEY (paymentID),
+     FOREIGN KEY (clientID) REFERENCES client(clientID),
+     FOREIGN KEY (accountNum) REFERENCES account(accountNum)
+);
+
+# subtype for transportation 
+
+create table spill (
+    sTransportationID VARCHAR(18) not null,
+    dateOfIncident DATE not null,
+    spillReport VARCHAR(200) not null,
+    dateOfFiling DATE not null,
+    spillRegion VARCHAR(8) not null,
+    spillCity VARCHAR(30) not null,
+    spillBarangay VARCHAR(30) not null,
+    spillStreetName VARCHAR(30) not null,
+    PRIMARY KEY (sTransportationID),
+    FOREIGN KEY (sTransportationID) REFERENCES transportation(transportationID)
+);
+
+
+create table delivered (
+    dTransportationID VARCHAR(18) not null,
+    dateDelivered DATE not null,
+    PRIMARY KEY (dTransportationID),
+    FOREIGN KEY (dTransportationID) REFERENCES transportation(transportationID)
+);
+
+create table failure (
+    fTransportationID VARCHAR(18) not null,
+    failureReport VARCHAR(200) not null,
+    dateReturned DATE,
+    PRIMARY KEY (fTransportationID),
+    FOREIGN KEY (fTransportationID) REFERENCES transportation(transportationID)
+);
+
+create table employee (
+    employeeID VARCHAR(18) PRIMARY KEY,
+    employeeLastName VARCHAR(15) not null,
+    employeeFirstName VARCHAR(15) not null,
+    employeeContactNum VARCHAR(11) not null,
+    employeeEmail VARCHAR(30) not null,
+    employeeRegion VARCHAR(8) not null,
+    employeeCity VARCHAR(30) not null,
+    employeeBarangay VARCHAR(30) not null,
+    employeeStreetName VARCHAR(30) not null,
+    employeeHouseNum VARCHAR(5) not null,
+    employeeType VARCHAR(1) not null
+);
+
+#subtype for employee
+
+create table attendant (
+   aEmployeeID VARCHAR(18) not null,
+    PRIMARY KEY (aEmployeeID),
+    FOREIGN KEY (aEmployeeID) REFERENCES employee(employeeID)
+);
+
+create table driver (
+    dEmployeeID VARCHAR(18) not null,
+    dateLicenseRegistration DATE not null,
+    dateLicenseExpiration DATE not null,
+    PRIMARY KEY (dEmployeeID),
+    FOREIGN KEY (dEmployeeID) REFERENCES employee(employeeID)
+);
+
+create table vehicle (
+    vehicleID VARCHAR(18) PRIMARY KEY,
+    vehiclePlate VARCHAR(8) UNIQUE not null,
+    vehicleType VARCHAR(1) not null,
+    vehicleCapacity FLOAT(4,2) not null,
+    vehicleStatus VARCHAR(1) not null DEFAULT "A"
+);
+
+
+# Associative Entities
+
+create table employeeAssignment (
+    employeeAssignmentID VARCHAR(18) not null,
+    transportationID VARCHAR(18) not null,
+    PRIMARY KEY (employeeAssignmentID),
+    FOREIGN KEY (transportationID) REFERENCES transportation(transportationID)
+);
+
+create table vehicleAssignment (
+    eAssignmentID VARCHAR(18) not null,
+    dEmployeeID VARCHAR(18) not null,
+    vehicleID VARCHAR(18) not null,
+    PRIMARY KEY (eAssignmentID, dEmployeeID, vehicleID),
+    FOREIGN KEY (eAssignmentID) REFERENCES employeeAssignment(employeeAssignmentID)
+);
+
+create table attendantAssignment (
+    eAssignmentID VARCHAR(18) not null,
+    aEmployeeID VARCHAR(18) not null,
+    PRIMARY KEY (eAssignmentID, aEmployeeID),
+    FOREIGN KEY (eAssignmentID) REFERENCES employeeAssignment(employeeAssignmentID)
+);
+
+
+create table wasteAssignment (
+    wasteID VARCHAR(4),
+    requestID VARCHAR(18),
+    amount FLOAT(4, 2) not null,
+    PRIMARY KEY (wasteID, requestID),
+    FOREIGN KEY (wasteID) REFERENCES waste(wasteID),
+    FOREIGN KEY (requestID) REFERENCES request(requestID)
+);
