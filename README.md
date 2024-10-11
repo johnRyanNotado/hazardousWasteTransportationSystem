@@ -1,0 +1,2 @@
+This project is for personal and educational purposes only. I do not claim any ownership or rights to the company name, trademarks, or any related content included in this repository. The data, transactions, and other elements represented here are entirely fictional and do not reflect real-world activities or operations. This project is not affiliated with or endorsed by the referenced company in any way.
+
